@@ -34,6 +34,15 @@ test("GET /ping returns pong", async () => {
 	assert.deepEqual(await res.json(), { pong: true });
 });
 
+test("GET /uptime returns uptime in seconds", async () => {
+	const res = await fetch(`${base}/uptime`);
+	assert.equal(res.status, 200);
+	const body = await res.json();
+	assert.deepEqual(Object.keys(body), ["uptimeSeconds"]);
+	assert.equal(typeof body.uptimeSeconds, "number");
+	assert.ok(body.uptimeSeconds >= 0);
+});
+
 test("unknown path returns 404", async () => {
 	const res = await fetch(`${base}/nope`);
 	assert.equal(res.status, 404);

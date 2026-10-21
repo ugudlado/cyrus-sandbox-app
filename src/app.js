@@ -16,6 +16,11 @@ export function handle(req, res) {
 		res.end(JSON.stringify({ pong: true }));
 		return;
 	}
+	if (req.method === "GET" && req.url === "/uptime") {
+		res.writeHead(200, { "content-type": "application/json" });
+		res.end(JSON.stringify({ uptimeSeconds: process.uptime() }));
+		return;
+	}
 	res.writeHead(404, { "content-type": "application/json" });
 	res.end(JSON.stringify({ error: "not found" }));
 }
