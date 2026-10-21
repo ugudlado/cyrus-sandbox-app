@@ -46,6 +46,18 @@ test("GET /version returns the version", async () => {
 	assert.deepEqual(await res.json(), { version: "0.1.0" });
 });
 
+test("GET /echo returns the query string as JSON", async () => {
+	const res = await fetch(`${base}/echo?foo=bar&name=cyrus%20app`);
+	assert.equal(res.status, 200);
+	assert.deepEqual(await res.json(), { foo: "bar", name: "cyrus app" });
+});
+
+test("GET /echo without a query string returns an empty object", async () => {
+	const res = await fetch(`${base}/echo`);
+	assert.equal(res.status, 200);
+	assert.deepEqual(await res.json(), {});
+});
+
 test("unknown path returns 404", async () => {
 	const res = await fetch(`${base}/nope`);
 	assert.equal(res.status, 404);

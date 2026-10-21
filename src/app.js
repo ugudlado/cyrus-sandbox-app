@@ -26,6 +26,12 @@ export function handle(req, res) {
 		res.end(JSON.stringify({ version: "0.1.0" }));
 		return;
 	}
+	const url = new URL(req.url, "http://localhost");
+	if (req.method === "GET" && url.pathname === "/echo") {
+		res.writeHead(200, { "content-type": "application/json" });
+		res.end(JSON.stringify(Object.fromEntries(url.searchParams)));
+		return;
+	}
 	res.writeHead(404, { "content-type": "application/json" });
 	res.end(JSON.stringify({ error: "not found" }));
 }
