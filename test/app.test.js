@@ -40,6 +40,18 @@ test("GET /hello returns world", async () => {
 	assert.deepEqual(await res.json(), { hello: "world" });
 });
 
+test("GET /time returns the current ISO time", async () => {
+	const start = Date.now();
+	const res = await fetch(`${base}/time`);
+	const end = Date.now();
+	assert.equal(res.status, 200);
+	const body = await res.json();
+	assert.deepEqual(Object.keys(body), ["now"]);
+	assert.equal(new Date(body.now).toISOString(), body.now);
+	const now = Date.parse(body.now);
+	assert.ok(now >= start && now <= end);
+});
+
 test("unknown path returns 404", async () => {
 	const res = await fetch(`${base}/nope`);
 	assert.equal(res.status, 404);

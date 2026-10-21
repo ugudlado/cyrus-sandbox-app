@@ -21,6 +21,11 @@ export function handle(req, res) {
 		res.end(JSON.stringify({ hello: "world" }));
 		return;
 	}
+	if (req.method === "GET" && req.url === "/time") {
+		res.writeHead(200, { "content-type": "application/json" });
+		res.end(JSON.stringify({ now: new Date().toISOString() }));
+		return;
+	}
 	res.writeHead(404, { "content-type": "application/json" });
 	res.end(JSON.stringify({ error: "not found" }));
 }
