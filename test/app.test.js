@@ -40,6 +40,13 @@ test("GET /hello returns world", async () => {
 	assert.deepEqual(await res.json(), { hello: "world" });
 });
 
+test("GET /status returns ok true", async () => {
+	const res = await fetch(`${base}/status`);
+	assert.equal(res.status, 200);
+	assert.match(res.headers.get("content-type"), /application\/json/);
+	assert.deepEqual(await res.json(), { ok: true });
+});
+
 test("unknown path returns 404", async () => {
 	const res = await fetch(`${base}/nope`);
 	assert.equal(res.status, 404);
