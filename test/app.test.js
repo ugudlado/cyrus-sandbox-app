@@ -34,10 +34,16 @@ test("GET /ping returns pong", async () => {
 	assert.deepEqual(await res.json(), { pong: true });
 });
 
+test("GET /hello returns world", async () => {
+	const res = await fetch(`${base}/hello`);
+	assert.equal(res.status, 200);
+	assert.deepEqual(await res.json(), { hello: "world" });
+});
+
 test("GET /version returns the version", async () => {
 	const res = await fetch(`${base}/version`);
 	assert.equal(res.status, 200);
-	assert.deepEqual(await res.json(), { version: "0.1.0" });
+	assert.deepEqual(await res.json(), { version: "0.1.2" });
 });
 
 test("unknown path returns 404", async () => {
