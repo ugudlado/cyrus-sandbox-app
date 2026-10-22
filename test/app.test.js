@@ -25,7 +25,13 @@ test("GET / returns the app name", async () => {
 test("GET /health returns ok", async () => {
 	const res = await fetch(`${base}/health`);
 	assert.equal(res.status, 200);
-	assert.deepEqual(await res.json(), { status: "ok" });
+	assert.equal((await res.json()).status, "ok");
+});
+
+test("GET /health includes ok: true", async () => {
+	const res = await fetch(`${base}/health`);
+	assert.equal(res.status, 200);
+	assert.deepEqual(await res.json(), { status: "ok", ok: true });
 });
 
 test("GET /ping returns pong", async () => {

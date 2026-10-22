@@ -8,7 +8,7 @@ export function handle(req, res) {
 	}
 	if (req.method === "GET" && req.url === "/health") {
 		res.writeHead(200, { "content-type": "application/json" });
-		res.end(JSON.stringify({ status: "ok" }));
+		res.end(JSON.stringify({ status: "ok", ok: true }));
 		return;
 	}
 	if (req.method === "GET" && req.url === "/ping") {
