@@ -8,3 +8,4 @@ npm start    # PORT=3000 by default
 ```
 
 There is no CI on purpose: tests run locally and in Cyrus worktrees.
+Smoke test 2026-10-24: Kittu agent end-to-end check.
