@@ -52,6 +52,16 @@ test("GET /version returns the version", async () => {
 	assert.deepEqual(await res.json(), { version: "0.1.2" });
 });
 
+test("GET /uptime returns process uptime in whole seconds", async () => {
+	const res = await fetch(`${base}/uptime`);
+	assert.equal(res.status, 200);
+	const body = await res.json();
+	assert.deepEqual(Object.keys(body), ["uptime"]);
+	assert.ok(Number.isInteger(body.uptime));
+	assert.ok(body.uptime >= 0);
+	assert.ok(body.uptime <= Math.ceil(process.uptime()));
+});
+
 test("unknown path returns 404", async () => {
 	const res = await fetch(`${base}/nope`);
 	assert.equal(res.status, 404);

@@ -26,6 +26,11 @@ export function handle(req, res) {
 		res.end(JSON.stringify({ version: "0.1.2" }));
 		return;
 	}
+	if (req.method === "GET" && req.url === "/uptime") {
+		res.writeHead(200, { "content-type": "application/json" });
+		res.end(JSON.stringify({ uptime: Math.floor(process.uptime()) }));
+		return;
+	}
 	res.writeHead(404, { "content-type": "application/json" });
 	res.end(JSON.stringify({ error: "not found" }));
 }
