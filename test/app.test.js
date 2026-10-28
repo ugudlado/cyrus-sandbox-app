@@ -6,7 +6,7 @@ let server;
 let base;
 
 before(async () => {
-	server = createServer();
+	server = createServer({ log: () => {} });
 	await new Promise((resolve) => server.listen(0, resolve));
 	base = `http://127.0.0.1:${server.address().port}`;
 });
