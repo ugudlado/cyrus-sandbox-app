@@ -9,4 +9,4 @@ npm start    # PORT=3000 by default
 
 There is no CI on purpose: tests run locally and in Cyrus worktrees.
 
-Delivered through the kittu-jobs hub.
+Delivered through the kittu-jobs hub
