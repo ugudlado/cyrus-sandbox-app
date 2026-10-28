@@ -1,4 +1,5 @@
 import http from "node:http";
+import { createRateLimiter } from "./rate-limit.js";
 
 export function handle(req, res) {
 	if (req.method === "GET" && req.url === "/") {
@@ -30,6 +31,11 @@ export function handle(req, res) {
 	res.end(JSON.stringify({ error: "not found" }));
 }
 
-export function createServer() {
-	return http.createServer(handle);
+export function createServer(options = {}) {
+	const limiter = createRateLimiter(options);
+	return http.createServer((req, res) => {
+		if (limiter(req, res)) {
+			handle(req, res);
+		}
+	});
 }
