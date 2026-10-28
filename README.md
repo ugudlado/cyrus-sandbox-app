@@ -7,4 +7,6 @@ npm test     # node --test, no dependencies
 npm start    # PORT=3000 by default
 ```
 
+API reference: [docs/api.md](docs/api.md).
+
 There is no CI on purpose: tests run locally and in Cyrus worktrees.

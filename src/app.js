@@ -1,4 +1,5 @@
 import http from "node:http";
+import { withRequestLogging } from "./logger.js";
 
 export function handle(req, res) {
 	if (req.method === "GET" && req.url === "/") {
@@ -30,6 +31,6 @@ export function handle(req, res) {
 	res.end(JSON.stringify({ error: "not found" }));
 }
 
-export function createServer() {
-	return http.createServer(handle);
+export function createServer({ log } = {}) {
+	return http.createServer(withRequestLogging(handle, { log }));
 }
