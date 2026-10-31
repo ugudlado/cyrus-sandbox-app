@@ -10,3 +10,4 @@
 8. A write-back cache writes only to the cache and flushes dirty entries to the backing store later, which speeds up writes but risks data loss on failure.
 9. A TTL (time to live) expires cache entries after a fixed period so stale data is eventually refreshed.
 10. Cache invalidation, deciding when cached data is no longer valid, is famously one of the hard problems in computer science.
+11. A cache stampede happens when many requests miss on the same expired key at once and all hit the backing store together.
