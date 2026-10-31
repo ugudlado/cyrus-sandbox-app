@@ -5,3 +5,4 @@
 3. With a linked list or a circular buffer, enqueue and dequeue both run in O(1) time.
 4. A circular buffer (ring buffer) stores a bounded queue in a fixed-size array whose head and tail indices wrap around to the start.
 5. A double-ended queue (deque) allows insertion and removal at both the front and the back.
+6. A priority queue dequeues the element with the highest priority rather than the oldest one, and is commonly backed by a binary heap.
