@@ -8,3 +8,4 @@
 6. Strict FIFO ordering usually limits throughput; many queues offer ordering only within a partition or message group key.
 7. Backpressure keeps producers from overwhelming consumers, for example by bounding queue length or rejecting new jobs when the queue is full.
 8. Delayed or scheduled jobs are typically stored with a run-at timestamp and moved to the ready queue only when that time arrives.
+9. Priority queues let urgent jobs skip ahead, but without aging or fair scheduling, low-priority jobs can starve.
