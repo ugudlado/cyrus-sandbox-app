@@ -11,3 +11,4 @@
 9. A TTL (time to live) expires cache entries after a fixed period so stale data is eventually refreshed.
 10. Cache invalidation, deciding when cached data is no longer valid, is famously one of the hard problems in computer science.
 11. A cache stampede happens when many requests miss on the same expired key at once and all hit the backing store together.
+12. HTTP caching is controlled by headers such as Cache-Control, ETag and Last-Modified, which let browsers and CDNs reuse responses safely.
