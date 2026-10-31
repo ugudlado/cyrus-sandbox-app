@@ -11,3 +11,4 @@
 9. Message queues such as RabbitMQ and Amazon SQS decouple producers from consumers so each side can run and scale independently.
 10. A dead-letter queue holds messages that could not be processed after a set number of attempts, so they can be inspected later.
 11. A queue can be built from two stacks: push onto an inbox stack, and pop from an outbox stack, refilling it from the inbox only when it is empty, giving amortized O(1) operations.
+12. Little's Law states that the average number of items in a stable queueing system equals the arrival rate multiplied by the average time an item spends in the system (L = λW).
