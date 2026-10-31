@@ -9,3 +9,4 @@
 7. Breadth-first search uses a queue to visit graph nodes in order of their distance from the start node.
 8. Operating system schedulers keep runnable processes in ready queues; round-robin scheduling cycles through one such queue.
 9. Message queues such as RabbitMQ and Amazon SQS decouple producers from consumers so each side can run and scale independently.
+10. A dead-letter queue holds messages that could not be processed after a set number of attempts, so they can be inspected later.
