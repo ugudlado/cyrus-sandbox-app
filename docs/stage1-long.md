@@ -10,3 +10,4 @@
 8. Delayed or scheduled jobs are typically stored with a run-at timestamp and moved to the ready queue only when that time arrives.
 9. Priority queues let urgent jobs skip ahead, but without aging or fair scheduling, low-priority jobs can starve.
 10. Graceful shutdown means a worker stops claiming new jobs, finishes or releases in-flight ones, and only then exits.
+11. Queue depth and job age (time since enqueue) are the key health metrics; a growing oldest-job age signals that consumers are falling behind.
