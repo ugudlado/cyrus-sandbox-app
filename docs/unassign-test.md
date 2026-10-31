@@ -8,3 +8,4 @@
 6. LRU (least recently used) eviction removes the entry that has gone unused the longest when the cache is full.
 7. A write-through cache writes to the cache and the backing store at the same time, which keeps them consistent at the cost of write latency.
 8. A write-back cache writes only to the cache and flushes dirty entries to the backing store later, which speeds up writes but risks data loss on failure.
+9. A TTL (time to live) expires cache entries after a fixed period so stale data is eventually refreshed.
