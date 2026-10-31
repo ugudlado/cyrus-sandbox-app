@@ -6,3 +6,4 @@
 4. CPU caches are organised in levels (L1, L2, L3), where L1 is the smallest and fastest and L3 is the largest and slowest.
 5. Caches exploit temporal locality (recently used data is likely to be used again) and spatial locality (nearby data is likely to be used soon).
 6. LRU (least recently used) eviction removes the entry that has gone unused the longest when the cache is full.
+7. A write-through cache writes to the cache and the backing store at the same time, which keeps them consistent at the cost of write latency.
