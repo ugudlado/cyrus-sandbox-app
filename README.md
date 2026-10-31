@@ -8,3 +8,5 @@ npm start    # PORT=3000 by default
 ```
 
 There is no CI on purpose: tests run locally and in Cyrus worktrees.
+
+Stage 1 verified: runner inside the engine.
