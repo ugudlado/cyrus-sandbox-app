@@ -7,3 +7,4 @@
 5. A dead-letter queue collects jobs that have exceeded their maximum retry count, so poison messages stop blocking the main queue and can be inspected later.
 6. Strict FIFO ordering usually limits throughput; many queues offer ordering only within a partition or message group key.
 7. Backpressure keeps producers from overwhelming consumers, for example by bounding queue length or rejecting new jobs when the queue is full.
+8. Delayed or scheduled jobs are typically stored with a run-at timestamp and moved to the ready queue only when that time arrives.
