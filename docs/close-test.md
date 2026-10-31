@@ -7,3 +7,4 @@
 5. A double-ended queue (deque) allows insertion and removal at both the front and the back.
 6. A priority queue dequeues the element with the highest priority rather than the oldest one, and is commonly backed by a binary heap.
 7. Breadth-first search uses a queue to visit graph nodes in order of their distance from the start node.
+8. Operating system schedulers keep runnable processes in ready queues; round-robin scheduling cycles through one such queue.
