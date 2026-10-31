@@ -8,3 +8,4 @@
 6. A priority queue dequeues the element with the highest priority rather than the oldest one, and is commonly backed by a binary heap.
 7. Breadth-first search uses a queue to visit graph nodes in order of their distance from the start node.
 8. Operating system schedulers keep runnable processes in ready queues; round-robin scheduling cycles through one such queue.
+9. Message queues such as RabbitMQ and Amazon SQS decouple producers from consumers so each side can run and scale independently.
