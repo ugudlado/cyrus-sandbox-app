@@ -11,3 +11,4 @@
 9. Priority queues let urgent jobs skip ahead, but without aging or fair scheduling, low-priority jobs can starve.
 10. Graceful shutdown means a worker stops claiming new jobs, finishes or releases in-flight ones, and only then exits.
 11. Queue depth and job age (time since enqueue) are the key health metrics; a growing oldest-job age signals that consumers are falling behind.
+12. Exactly-once processing is not achievable by the queue alone; it is approximated by combining at-least-once delivery with idempotent handlers or transactional outbox/inbox patterns.
