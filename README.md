@@ -11,3 +11,4 @@ There is no CI on purpose: tests run locally and in Cyrus worktrees.
 R probe 1
 R probe 2
 R probe 3
+R probe 4
