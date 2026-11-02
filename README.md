@@ -10,3 +10,4 @@ npm start    # PORT=3000 by default
 There is no CI on purpose: tests run locally and in Cyrus worktrees.
 R probe 1
 R probe 2
+R probe 3
